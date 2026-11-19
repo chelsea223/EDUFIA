@@ -297,5 +297,66 @@
     SUPABASE_PUBLISHABLE_KEY
   );
 </script> 
+  <script>
+document.getElementById("loginForm").addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  const username = document.getElementById("loginUsername").value.trim().toLowerCase();
+  const password = document.getElementById("loginPassword").value;
+  const message = document.getElementById("loginMessage");
+
+  message.textContent = "Memeriksa akun...";
+  message.style.color = "#6254d9";
+
+  try {
+    // Admin menggunakan email, sedangkan siswa dan Guru BK menggunakan username.
+    const loginEmail = username.includes("@")
+      ? username
+      : `${username}@login.edufia.invalid`;
+
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+      email: loginEmail,
+      password: password
+    });
+
+    if (error) {
+      message.textContent = "Username atau password tidak sesuai.";
+      message.style.color = "red";
+      return;
+    }
+
+    const { data: profile, error: profileError } = await supabaseClient
+      .from("profiles")
+      .select("full_name, role, approval_status")
+      .eq("id", data.user.id)
+      .single();
+
+    if (profileError || !profile) {
+      await supabaseClient.auth.signOut();
+      message.textContent = "Profil akun tidak ditemukan.";
+      message.style.color = "red";
+      return;
+    }
+
+    if (profile.approval_status !== "approved") {
+      await supabaseClient.auth.signOut();
+
+      message.textContent = profile.approval_status === "pending"
+        ? "Akun masih menunggu persetujuan Admin."
+        : "Akun belum disetujui. Silakan hubungi Admin.";
+
+      message.style.color = "red";
+      return;
+    }
+
+    message.textContent = `Login berhasil. Selamat datang, ${profile.full_name}!`;
+    message.style.color = "green";
+
+  } catch (error) {
+    message.textContent = "Terjadi kesalahan. Silakan coba lagi.";
+    message.style.color = "red";
+  }
+});
+</script>
 </body>
 </html>
