@@ -351,6 +351,14 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
 
     message.textContent = `Login berhasil. Selamat datang, ${profile.full_name}!`;
     message.style.color = "green";
+    
+    if (profile.role === "admin") {
+      document.getElementById("adminDashboard").style.display = "block";
+      document.getElementById("login").style.display = "none";
+      document.getElementById("register").style.display = "none";
+      document.querySelector("header").style.display = "none";
+      document.querySelector("main").style.display = "none";
+    }
 
   } catch (error) {
     message.textContent = "Terjadi kesalahan. Silakan coba lagi.";
