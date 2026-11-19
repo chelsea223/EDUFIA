@@ -444,10 +444,10 @@ document.getElementById("registerForm").addEventListener("submit", async functio
       style="width:100%; padding:13px; margin:8px 0 18px; border:1px solid #ddd; border-radius:9px;"
     >
 
-    <button type="button" disabled
-      style="width:100%; padding:13px; background:#aaa; color:white; border:0; border-radius:10px;">
-      Fitur Segera Diaktifkan
-    </button>
+    <button type="submit"
+  style="width:100%; padding:13px; background:#6254d9; color:white; border:0; border-radius:10px; font-weight:bold; cursor:pointer;">
+  + Tambahkan Sekolah
+</button>
 
     <p id="schoolMessage" style="margin-top:15px;"></p>
 
@@ -455,5 +455,56 @@ document.getElementById("registerForm").addEventListener("submit", async functio
 
 </div>
 </section>
+  <script>
+document.getElementById("schoolForm").addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  const nameInput = document.getElementById("schoolName");
+  const codeInput = document.getElementById("newSchoolCode");
+  const message = document.getElementById("schoolMessage");
+  const button = this.querySelector('button[type="submit"]');
+
+  const schoolName = nameInput.value.trim();
+  const schoolCode = codeInput.value.trim().toUpperCase();
+
+  if (!schoolName || !schoolCode) {
+    message.textContent = "Nama dan kode sekolah wajib diisi.";
+    message.style.color = "red";
+    return;
+  }
+
+  button.disabled = true;
+  button.textContent = "Menyimpan...";
+  message.textContent = "Sedang menyimpan data sekolah...";
+
+  try {
+    const { error } = await supabaseClient
+      .from("schools")
+      .insert({
+        school_name: schoolName,
+        school_code: schoolCode
+      });
+
+    if (error) {
+      if (error.code === "23505") {
+        throw new Error("Kode sekolah sudah digunakan.");
+      }
+      throw error;
+    }
+
+    message.textContent = "Sekolah berhasil ditambahkan!";
+    message.style.color = "green";
+    this.reset();
+
+  } catch (error) {
+    message.textContent = error.message || "Gagal menyimpan sekolah.";
+    message.style.color = "red";
+
+  } finally {
+    button.disabled = false;
+    button.textContent = "+ Tambahkan Sekolah";
+  }
+});
+</script>
 </body>
 </html>
