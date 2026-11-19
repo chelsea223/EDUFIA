@@ -358,5 +358,18 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
   }
 });
 </script>
+  <script>
+document.getElementById("registerForm").addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  const message = document.getElementById("registerMessage");
+
+  // Pendaftaran belum dibuka sampai perlindungan server siap.
+  message.textContent = "Pendaftaran EDUFIA belum dibuka.";
+  message.style.color = "#6254d9";
+
+  return;
+});
+</script>
 </body>
 </html>
