@@ -1,26 +1,203 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="EDUFIA - Platform gamifikasi untuk mendukung pengelolaan belajar siswa SMA/SMK.">
-  <title>EDUFIA - Teman Perjalanan Belajarmu</title>
-</head>
-<body>
+  <meta name="description" content="EDUFIA - Teman perjalanan belajar siswa SMA/SMK.">
+  <title>EDUFIA - Learn, Grow, Achieve!</title>
 
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7ff;
+      color: #26345c;
+    }
+
+    header {
+      background: white;
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 12px #0000000d;
+    }
+
+    .logo {
+      color: #6254d9;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .tagline {
+      font-size: 13px;
+      color: #777;
+    }
+
+    .hero {
+      min-height: 75vh;
+      padding: 70px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      max-width: 570px;
+    }
+
+    .hero-text small {
+      color: #6254d9;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 6vw, 58px);
+      line-height: 1.15;
+      margin: 20px 0;
+    }
+
+    h1 span {
+      color: #6254d9;
+    }
+
+    .hero-text p {
+      color: #68718a;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .hero-image {
+      font-size: 120px;
+      background: #e9e6ff;
+      width: 250px;
+      height: 250px;
+      border-radius: 45%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+    }
+
+    .features {
+      padding: 55px 8%;
+      background: white;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .features > p {
+      color: #777;
+      margin-bottom: 30px;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 20px;
+    }
+
+    .feature {
+      padding: 25px;
+      background: #f5f4ff;
+      border-radius: 18px;
+    }
+
+    .feature div {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .feature h3 {
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      color: #777;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #777;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
   <header>
-    <h1>EDUFIA</h1>
-    <p>Learn, Grow, Achieve!</p>
+    <div>
+      <div class="logo">EDUFIA ✨</div>
+      <div class="tagline">Learn, Grow, Achieve!</div>
+    </div>
   </header>
 
   <main>
-    <h2>Selamat Datang di EDUFIA</h2>
-    <p>Platform pendukung pengelolaan belajar siswa SMA/SMK.</p>
+    <section class="hero">
+      <div class="hero-text">
+        <small>YOUR LEARNING COMPANION</small>
+        <h1>Belajar Lebih Seru, <span>Raih Prestasi!</span></h1>
+        <p>
+          Selamat datang di EDUFIA! Platform belajar berbasis
+          gamifikasi yang membantumu mengatur kegiatan belajar,
+          menyelesaikan misi, mengumpulkan poin, dan mengenali
+          perkembangan dirimu.
+        </p>
+      </div>
+
+      <div class="hero-image">📚🌟</div>
+    </section>
+
+    <section class="features">
+      <h2>Temukan Keseruan Belajarmu!</h2>
+      <p>Bangun kebiasaan belajar yang lebih terarah bersama EDUFIA.</p>
+
+      <div class="feature-list">
+        <div class="feature">
+          <div>🎯</div>
+          <h3>Misi Belajar</h3>
+          <p>Selesaikan tantangan belajar secara bertahap.</p>
+        </div>
+
+        <div class="feature">
+          <div>🏆</div>
+          <h3>Poin dan Prestasi</h3>
+          <p>Kumpulkan poin dari setiap misi yang diselesaikan.</p>
+        </div>
+
+        <div class="feature">
+          <div>📈</div>
+          <h3>Progres Belajar</h3>
+          <p>Pantau perkembangan kegiatan belajarmu.</p>
+        </div>
+
+        <div class="feature">
+          <div>💬</div>
+          <h3>Layanan BK</h3>
+          <p>Terhubung dengan Guru BK untuk mendapatkan dukungan belajar.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; 2026 EDUFIA</p>
+    © 2026 EDUFIA — Learn, Grow, Achieve!
   </footer>
-
 </body>
 </html>
