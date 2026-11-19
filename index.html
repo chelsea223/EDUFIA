@@ -416,7 +416,44 @@ document.getElementById("registerForm").addEventListener("submit", async functio
       Kelola seluruh layanan EDUFIA melalui dashboard ini.
     </p>
   </div>
+<div style="background:white; padding:25px; border-radius:15px; margin-top:25px;">
 
+  <h3 style="color:#6254d9;">🏫 Manajemen Sekolah</h3>
+
+  <p style="color:#777; margin:10px 0 20px;">
+    Tambahkan sekolah yang akan menggunakan EDUFIA.
+  </p>
+
+  <form id="schoolForm">
+
+    <label for="schoolName">Nama Sekolah</label>
+    <input
+      id="schoolName"
+      type="text"
+      required
+      placeholder="Contoh: SMA Negeri 1"
+      style="width:100%; padding:13px; margin:8px 0 18px; border:1px solid #ddd; border-radius:9px;"
+    >
+
+    <label for="newSchoolCode">Kode Sekolah</label>
+    <input
+      id="newSchoolCode"
+      type="text"
+      required
+      placeholder="Contoh: EDUFIA-SMA01"
+      style="width:100%; padding:13px; margin:8px 0 18px; border:1px solid #ddd; border-radius:9px;"
+    >
+
+    <button type="button" disabled
+      style="width:100%; padding:13px; background:#aaa; color:white; border:0; border-radius:10px;">
+      Fitur Segera Diaktifkan
+    </button>
+
+    <p id="schoolMessage" style="margin-top:15px;"></p>
+
+  </form>
+
+</div>
 </section>
 </body>
 </html>
