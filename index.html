@@ -199,5 +199,92 @@
   <footer>
     © 2026 EDUFIA — Learn, Grow, Achieve!
   </footer>
+  <section id="login" style="padding:60px 8%; background:#f5f7ff;">
+  <div style="max-width:480px; margin:auto; background:white; padding:30px; border-radius:20px; box-shadow:0 5px 20px #00000010;">
+    <h2 style="text-align:center; color:#6254d9;">Masuk ke EDUFIA</h2>
+    <p style="text-align:center; color:#777; margin:12px 0 25px;">
+      Lanjutkan perjalanan belajarmu!
+    </p>
+
+    <form id="loginForm">
+      <label for="loginUsername">Username</label>
+      <input id="loginUsername" type="text" required
+        placeholder="Masukkan username"
+        style="width:100%; padding:13px; margin:8px 0 18px; border:1px solid #ddd; border-radius:9px;">
+
+      <label for="loginPassword">Password</label>
+      <input id="loginPassword" type="password" required
+        placeholder="Masukkan password"
+        style="width:100%; padding:13px; margin:8px 0 18px; border:1px solid #ddd; border-radius:9px;">
+
+      <button type="submit"
+        style="width:100%; padding:14px; background:#6254d9; color:white; border:0; border-radius:10px; font-weight:bold; cursor:pointer;">
+        Masuk
+      </button>
+
+      <p id="loginMessage" style="margin-top:15px; text-align:center;"></p>
+    </form>
+  </div>
+</section>
+  <section id="register" style="padding:60px 8%; background:white;">
+  <div style="max-width:480px; margin:auto; background:#f5f4ff; padding:30px; border-radius:20px;">
+
+    <h2 style="text-align:center; color:#6254d9;">
+      Daftar Akun EDUFIA
+    </h2>
+
+    <p style="text-align:center; color:#777; margin:12px 0 25px;">
+      Mulai perjalanan belajar serumu bersama EDUFIA!
+    </p>
+
+    <form id="registerForm">
+
+      <label for="registerRole">Daftar sebagai</label>
+      <select id="registerRole" required
+        style="width:100%; padding:13px; margin:8px 0 18px; border:1px solid #ddd; border-radius:9px;">
+        <option value="">Pilih jenis akun</option>
+        <option value="student">Siswa</option>
+        <option value="counselor">Guru BK</option>
+      </select>
+
+      <label for="registerName">Nama lengkap</label>
+      <input id="registerName" type="text" required
+        placeholder="Masukkan nama lengkap"
+        style="width:100%; padding:13px; margin:8px 0 18px; border:1px solid #ddd; border-radius:9px;">
+
+      <label for="registerUsername">Username</label>
+      <input id="registerUsername" type="text" required
+        placeholder="Buat username"
+        style="width:100%; padding:13px; margin:8px 0 18px; border:1px solid #ddd; border-radius:9px;">
+
+      <label for="registerPassword">Password</label>
+      <input id="registerPassword" type="password" required minlength="8"
+        placeholder="Minimal 8 karakter"
+        style="width:100%; padding:13px; margin:8px 0 18px; border:1px solid #ddd; border-radius:9px;">
+
+      <label for="schoolCode">Kode sekolah (khusus Siswa)</label>
+      <input id="schoolCode" type="text"
+        placeholder="Masukkan kode sekolah"
+        style="width:100%; padding:13px; margin:8px 0 18px; border:1px solid #ddd; border-radius:9px;">
+
+      <label for="inviteCode">Kode undangan (khusus Guru BK)</label>
+      <input id="inviteCode" type="text"
+        placeholder="Masukkan kode undangan Guru BK"
+        style="width:100%; padding:13px; margin:8px 0 18px; border:1px solid #ddd; border-radius:9px;">
+
+      <p style="font-size:13px; color:#777; margin-bottom:15px;">
+        Isi kode sesuai jenis akun yang dipilih. Pendaftaran akan menunggu persetujuan Admin.
+      </p>
+
+      <button type="button" disabled
+        style="width:100%; padding:14px; background:#aaa; color:white; border:0; border-radius:10px; font-weight:bold;">
+        Pendaftaran Segera Dibuka
+      </button>
+
+      <p id="registerMessage" style="margin-top:15px; text-align:center;"></p>
+
+    </form>
+  </div>
+</section>
 </body>
 </html>
